@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>BtPlayer</title>
+	<script src="//code.jquery.com/jquery-3.6.4.js"></script>
+	<script src="/bt-player.js"></script>
+
+	<style>
+		body {
+			font-family: 'Noto Sans TC', sans-serif, 'Microsoft JhengHei', arial;
+		}
+	</style>
+</head>
+
+<body>
+	<br>
+	<div id="my-player" style="width: 420px; max-width: 100%;"></div>
+	<br>
+	<br>
+	<div id="my-player2" style="width: 420px; max-width: 100%;"></div>
+
+	<script>
+		new BtPlayer({
+			container: $('#my-player'),
+			src: 'assets/preview.mp3',
+			onGTMStart: () => {
+				console.log('start')
+			},
+			onGTM25: () => {
+				console.log('25%')
+			},
+			onGTM50: () => {
+				console.log('50%')
+			},
+			onGTM75: () => {
+				console.log('75%')
+			},
+			onGTMEnd: () => {
+				console.log('end')
+			}
+		});
+
+		new BtPlayer({
+			container: $('#my-player2'),
+			src: 'assets/preview2.mp3',
+			showIcon: false,
+		});
+		
+	</script>
+</body>
+
+</html>
